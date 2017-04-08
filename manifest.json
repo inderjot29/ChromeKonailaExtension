@@ -1,0 +1,34 @@
+{
+   "name" : "Code Summarizer",
+  "version" : "1.0.0",
+  "description" : "Summarizes the results produced",
+  
+  "permissions": [
+    "http://stackoverflow.com/*","tabs", "webNavigation" ,"activeTab","http://annieying.ca:8847/*","storage"
+	],
+	
+  "page_action": {
+    "default_title": "Click to turn off/on Koniala mode",
+    "default_icon": "Capture.png"
+	
+   
+  },
+  
+  "background": {
+    "scripts": ["jquery-2.2.0.min.js","bootstrap.js"],
+    "persistent": true
+  },
+  
+  
+	"content_scripts" : [
+    {
+      "matches" : [ "http://stackoverflow.com/*" ],
+      "js" : [ "jquery-2.2.0.min.js","contentscript.js"],
+      "run_at" : "document_idle",
+      "all_frames" : false
+    }
+	],
+  
+   
+   "manifest_version": 2
+}
